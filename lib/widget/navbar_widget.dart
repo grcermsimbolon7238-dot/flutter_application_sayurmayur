@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class NavbarWidget extends StatelessWidget {
@@ -14,7 +15,7 @@ class NavbarWidget extends StatelessWidget {
       padding: EdgeInsets.zero,
       child: Container(
         height: 50.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25.0),
@@ -22,29 +23,35 @@ class NavbarWidget extends StatelessWidget {
           ),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
-              height: 50.0,
-              width: MediaQuery.of(context).size.width / 2 - 40.0,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.home, color: Color(0xFFEF7532)),
-                  Icon(Icons.search, color: Color(0xFF676E79)),
-                ],
+            Expanded(
+              child: SizedBox(
+                height: 50.0,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(Icons.home, color: Color(0xFFEF7532)),
+                    Icon(Icons.search, color: Color(0xFF676E79)),
+                  ],
+                ),
               ),
             ),
-            SizedBox(
-              height: 50.0,
-              width: MediaQuery.of(context).size.width / 2 - 40.0,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.shopping_basket_outlined,
-                      color: Color(0xFF676E79)),
-                  Icon(Icons.person_outline, color: Color(0xFF676E79)),
-                ],
+            Expanded(
+              child: SizedBox(
+                height: 50.0,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(
+                      Icons.shopping_basket_outlined,
+                      color: Color(0xFF676E79),
+                    ),
+                    Icon(
+                      Icons.person_outline,
+                      color: Color(0xFF676E79),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
